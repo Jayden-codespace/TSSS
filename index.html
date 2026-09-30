@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome Home</title>
+	<style>
+		:root { color-scheme: light; font-family: Arial, sans-serif; }
+		* { box-sizing: border-box; }
+		body { margin: 0; color: #172033; background: #f7f9fc; }
+		header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 8%; background: #fff; }
+		.logo { font-size: 1.35rem; font-weight: 700; color: #2563eb; }
+		nav a { margin-left: 1.5rem; color: #4b5563; text-decoration: none; }
+		nav a:hover { color: #2563eb; }
+		.hero { padding: 7rem 8%; text-align: center; background: linear-gradient(135deg, #eaf2ff, #fff); }
+		h1 { max-width: 700px; margin: 0 auto 1rem; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; }
+		.hero p { max-width: 600px; margin: 0 auto 2rem; color: #5b6475; font-size: 1.15rem; line-height: 1.6; }
+		.button { display: inline-block; padding: .9rem 1.5rem; border-radius: .5rem; color: #fff; background: #2563eb; text-decoration: none; font-weight: 700; }
+		.button:hover { background: #1d4ed8; }
+		.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: auto; padding: 4rem 8%; }
+		.card { padding: 1.5rem; background: #fff; border: 1px solid #e5eaf2; border-radius: .75rem; }
+		.card h2 { margin-top: 0; font-size: 1.2rem; }
+		.card p { color: #667085; line-height: 1.5; }
+		footer { padding: 2rem 8%; color: #667085; text-align: center; border-top: 1px solid #e5eaf2; }
+		@media (max-width: 700px) { header { padding: 1rem 5%; } nav a { margin-left: .75rem; font-size: .9rem; } .features { grid-template-columns: 1fr; padding: 3rem 5%; } .hero { padding: 5rem 5%; } }
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">YourBrand</div>
+		<nav aria-label="Main navigation">
+			<a href="#about">About</a>
+			<a href="#features">Features</a>
+			<a href="#contact">Contact</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero" id="about">
+			<h1>Build something great today.</h1>
+			<p>A simple, welcoming space to introduce your brand, share your vision, and connect with your audience.</p>
+			<a class="button" href="#contact">Get started</a>
+		</section>
+
+		<section class="features" id="features">
+			<article class="card"><h2>Simple</h2><p>Clear tools and thoughtful design help you focus on what matters.</p></article>
+			<article class="card"><h2>Flexible</h2><p>Adapt the experience to your goals, your team, and your customers.</p></article>
+			<article class="card"><h2>Reliable</h2><p>Count on a solid foundation that grows with you over time.</p></article>
+		</section>
+	</main>
+
+	<footer id="contact">&copy; 2025 YourBrand. All rights reserved.</footer>
+</body>
+</html>
