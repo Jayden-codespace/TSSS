@@ -10,8 +10,13 @@
 		body { margin: 0; color: var(--text); background: var(--cream); }
 		header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 8%; background: #fff; border-bottom: 3px solid var(--gold); }
 		.logo { font-size: 1.35rem; font-weight: 700; color: var(--brown); }
-		nav a { margin-left: 1.5rem; color: var(--text); text-decoration: none; }
-		nav a:hover { color: var(--orange); }
+		nav { position: relative; }
+		.menu-toggle { padding: .5rem .75rem; border: 1px solid var(--olive); border-radius: .35rem; background: #fff; color: var(--brown); font-size: 1.5rem; cursor: pointer; }
+		nav ul { display: none; position: absolute; z-index: 2; top: 100%; right: 0; min-width: 12rem; margin: .5rem 0 0; padding: .5rem 0; list-style: none; background: #fff; border: 1px solid var(--olive); border-radius: .5rem; box-shadow: 0 .5rem 1rem #0002; }
+		nav.open ul { display: block; }
+		nav a { display: block; padding: .65rem 1rem; color: var(--text); text-decoration: none; }
+		nav a:hover, nav a:focus-visible { color: var(--orange); background: var(--cream); }
+		.menu-toggle:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
 		.hero { padding: 7rem 8%; text-align: center; background: linear-gradient(135deg, #F6D869, var(--cream) 75%); }
 		h1 { max-width: 700px; margin: 0 auto 1rem; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; }
 		.hero p { max-width: 600px; margin: 0 auto 2rem; color: var(--text); font-size: 1.15rem; line-height: 1.6; }
@@ -22,16 +27,23 @@
 		.card h2 { margin-top: 0; font-size: 1.2rem; }
 		.card p { color: var(--text); line-height: 1.5; }
 		footer { padding: 2rem 8%; color: var(--text); text-align: center; border-top: 3px solid var(--olive); background: #fff; }
-		@media (max-width: 700px) { header { padding: 1rem 5%; } nav a { margin-left: .75rem; font-size: .9rem; } .features { grid-template-columns: 1fr; padding: 3rem 5%; } .hero { padding: 5rem 5%; } }
+		@media (max-width: 700px) { header { padding: 1rem 5%; } .features { grid-template-columns: 1fr; padding: 3rem 5%; } .hero { padding: 5rem 5%; } }
 	</style>
 </head>
 <body>
 	<header>
 			<div class="logo">TSSS | Teacher Tool</div>
-		<nav aria-label="Main navigation">
-			<a href="#about">Overview</a>
-			<a href="#features">Teaching lenses</a>
-			<a href="#contact">Discussion</a>
+			<nav id="main-navigation" aria-label="Main navigation">
+				<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-links" aria-label="Open navigation menu">☰</button>
+				<ul id="navigation-links">
+					<li><a href="index.html">Introduction</a></li>
+					<li><a href="section-1.html">Section 1</a></li>
+					<li><a href="section-2.html">Section 2</a></li>
+					<li><a href="section-3.html">Section 3</a></li>
+					<li><a href="section-4.html">Section 4</a></li>
+					<li><a href="lesson-plans.html">Lesson plans</a></li>
+					<li><a href="references.html">References</a></li>
+				</ul>
 		</nav>
 	</header>
 
@@ -50,5 +62,15 @@
 	</main>
 
 	<footer id="contact">A starting point for informed, compassionate classroom discussion of <em>A Thousand Splendid Suns</em>.</footer>
+	<script>
+		const menuButton = document.querySelector('.menu-toggle');
+		const menu = document.querySelector('#main-navigation');
+		menuButton.addEventListener('click', () => {
+			const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+			menuButton.setAttribute('aria-expanded', String(!expanded));
+			menuButton.setAttribute('aria-label', expanded ? 'Open navigation menu' : 'Close navigation menu');
+			menu.classList.toggle('open', !expanded);
+		});
+	</script>
 </body>
 </html>
