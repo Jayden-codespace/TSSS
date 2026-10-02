@@ -1,1 +1,280 @@
-<h1>Section 1: for A Thousand Splendid Suns</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Section 1 | A Thousand Splendid Suns</title>
+	<style>
+		:root { color-scheme: light; font-family: Arial, sans-serif; --text: #323232; --gold: #F6D869; --brown: #68291B; --rust: #7A2A18; --olive: #9F9460; --orange: #DE420B; --cream: #fffaf0; }
+		* { box-sizing: border-box; }
+		body { margin: 0; color: var(--text); background: var(--cream); }
+		header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 8%; background: #fff; border-bottom: 3px solid var(--gold); }
+		.logo { font-size: 1.35rem; font-weight: 700; color: var(--brown); }
+		nav { position: relative; }
+		.menu-toggle { box-sizing: border-box; min-width: 3rem; min-height: 3rem; flex: 0 0 auto; padding: .5rem .75rem; border: 1px solid var(--olive); border-radius: .35rem; background: #fff; color: var(--brown); font-size: 1.5rem; cursor: pointer; }
+		nav ul { display: none; position: absolute; z-index: 2; top: 100%; right: 0; width: max-content; min-width: max-content; max-width: min(90vw, 24rem); margin: .5rem 0 0; padding: .5rem 0; list-style: none; background: #fff; border: 1px solid var(--olive); border-radius: .5rem; box-shadow: 0 .5rem 1rem #0002; }
+		nav.open ul { display: block; }
+		nav a { display: block; padding: .65rem 1rem; color: var(--text); text-decoration: none; white-space: nowrap; }
+		nav a:hover, nav a:focus-visible { color: var(--orange); background: var(--cream); }
+		.menu-toggle:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+		nav ul { max-height: min(70vh, 32rem); overflow-y: auto; }
+		main { max-width: 1000px; min-height: 55vh; margin: auto; padding: 4rem 8%; }
+		h1 { color: var(--brown); }
+		.lesson-plan { max-width: 840px; margin: 0 auto 4rem; padding: clamp(1.5rem, 4vw, 3rem); background: #fff; border: 1px solid #e8dec1; border-top: 5px solid var(--gold); border-radius: .75rem; box-shadow: 0 .75rem 2rem #68291b12; }
+		.lesson-plan h2 { margin-top: 0; color: var(--brown); font-size: 1.75rem; }
+		.lesson-plan h3 { margin: 2rem 0 .75rem; color: var(--rust); }
+		.lesson-plan > ul { display: grid; gap: .65rem; margin: 1rem 0 2.5rem; padding: 1.25rem 1.5rem 1.25rem 2.5rem; background: var(--cream); border-left: 4px solid var(--olive); border-radius: .35rem; }
+		.lesson-plan li::marker { color: var(--orange); }
+		.lesson-plan blockquote { margin: 0; padding: 1rem 1.25rem; color: var(--brown); background: #fff8df; border-left: 4px solid var(--gold); border-radius: 0 .4rem .4rem 0; font-size: 1.08rem; line-height: 1.8; }
+		.lesson-plan blockquote p { margin: 0; }
+		.lesson-plan > p { margin: .75rem 0 1.5rem; color: #5c5145; font-style: italic; }
+		.carousel-slide[hidden] { display: none; }
+		.carousel-controls { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; }
+		.carousel-controls button { flex: 1; min-width: 0; padding: .75rem 1rem; border: 1px solid var(--olive); border-radius: .35rem; background: var(--brown); color: #fff; font: inherit; cursor: pointer; }
+		.carousel-controls button:hover:not(:disabled), .carousel-controls button:focus-visible { background: var(--rust); outline: 3px solid var(--gold); outline-offset: 2px; }
+		.carousel-controls button:disabled { opacity: .5; cursor: not-allowed; }
+		.slide-status { margin: 1rem 0 0; color: #5c5145; text-align: center; }
+		.carousel-table-wrap { margin-top: 1.5rem; overflow-x: auto; }
+		.carousel-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e8dec1; border-radius: .5rem; overflow: hidden; }
+		.carousel-table th, .carousel-table td { padding: .8rem .9rem; border-bottom: 1px solid #efe4ce; text-align: left; vertical-align: top; }
+		.carousel-table th { background: var(--cream); color: var(--brown); font-size: .95rem; }
+		.carousel-table tbody tr:last-child td { border-bottom: none; }
+		.carousel-table tbody tr { cursor: grab; }
+		.carousel-table tbody tr.dragging { opacity: .45; }
+		.carousel-table tbody tr.drop-target td { box-shadow: inset 0 3px var(--orange); }
+		footer { padding: 2rem 8%; color: var(--text); text-align: center; border-top: 3px solid var(--olive); background: #fff; }
+		body { overflow-x: hidden; }
+		main, header, footer { max-width: 100%; }
+		.lesson-plan { width: min(100%, 840px); }
+		@media (max-width: 900px) {
+			header { padding: 1rem 5%; }
+			main { padding: 3rem 5%; }
+			.lesson-plan { margin: 0 auto 3rem; width: min(100%, 760px); }
+		}
+		@media (max-width: 700px) {
+			header { flex-wrap: nowrap; gap: .75rem; }
+			.logo { font-size: 1.1rem; }
+			nav { width: auto; margin-left: auto; flex: 0 0 auto; }
+			.menu-toggle { display: flex; align-items: center; justify-content: center; text-align: center; }
+			nav ul { left: auto; right: 0; width: max-content; min-width: max-width; }
+			.lesson-plan { width: calc(100% - 1.5rem); padding: 1.25rem; }
+			.lesson-plan > ul { padding: 1rem 1rem 1rem 1.75rem; }
+			.carousel-controls { flex-direction: row; }
+			.carousel-controls button { width: 50%; padding: .75rem .5rem; }
+			h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+			.lesson-plan h2 { font-size: 1.45rem; }
+			.lesson-plan h3 { font-size: 1.2rem; }
+		}
+		@media (max-width: 480px) {
+			body { font-size: 15px; }
+			header, main, footer { padding-left: 1rem; padding-right: 1rem; }
+			header { align-items: stretch; }
+			.logo { line-height: 1.4; }
+			.carousel-controls { gap: .5rem; }
+			.carousel-controls button { font-size: .95rem; }
+			.lesson-plan { width: calc(100% - 1rem); margin: 0 auto 2rem; }
+			.lesson-plan > ul { padding: 0.9rem 0.9rem 0.9rem 1.4rem; }
+			.lesson-plan blockquote { padding: 0.85rem 1rem; }
+			.slide-status { font-size: 0.95rem; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">TSSS | Teacher Tool</div>
+		<nav id="main-navigation" aria-label="Main navigation">
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-links" aria-label="Open navigation menu">☰</button>
+			<ul id="navigation-links">
+				<li><a href="introduction.html">Introduction</a></li>
+				<li><a href="section-1.html">Section 1</a></li>
+				<li><a href="section-2.html">Section 2</a></li>
+				<li><a href="section-3.html">Section 3</a></li>
+				<li><a href="section-4.html">Section 4</a></li>
+				<li><a href="lesson-plans.html">Lesson plans</a></li>
+				<li><a href="references.html">References</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h1>Section 1: <em>A Thousand Splendid Suns</em></h1>
+
+		<section class="lesson-plan">
+			<div class="carousel-slide" aria-roledescription="slide">
+				<h2>Today's lesson</h2>
+				<ul>
+					<li>Kahoot recap</li>
+					<li>Short Writing Review</li>
+					<li>Group story builder</li>
+					<li>Group discussion</li>
+					<li>Recap discussion</li>
+					<li>Break</li>
+					<li>Article on the Bloody Code and Group discussion</li>
+					<li>Class discussion</li>
+					<li>Exit Tickets</li>
+				</ul>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Kahoot recap</h3>
+				<p><a href="https://create.kahoot.it/details/b93be94e-083e-48fc-991b-2f20d2285228" target="_blank" rel="noopener noreferrer">Kahoot recap quiz</a></p>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Short writing review</h3>
+				<blockquote>
+					<p>Imagine you are Mariam, sitting in the car after seeing Nana. Write a journal entry expressing your emotions—guilt, regret, anger, or sadness. What would you say if you could talk to Nana one last time?</p>
+				</blockquote>
+			</div>
+
+			
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<table class="carousel-table" aria-label="Group work: Story line builder">
+					<thead>
+						<tr>
+							<th scope="col">Section 1 event summary</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr draggable="true"><td>Mariam is given a dark green dress to wear over her cotton trousers</td></tr>
+						<tr draggable="true"><td>Mariam moves to Kabul</td></tr>
+						<tr draggable="true"><td>Mariam makes daal for Raheed</td></tr>
+						<tr draggable="true"><td>Mariam is treated very poorly by Jalil's wives</td></tr>
+						<tr draggable="true"><td>Mariam is married to a large man with a big hook nose, thick eyebrows and low hairline.</td></tr>
+						<tr draggable="true"><td>Rasheed tells Mariam that she needs to start wearing a burqa</td></tr>
+						<tr draggable="true"><td>Jalil's tell Mariam that she will to be married off to a stranger</td></tr>
+						<tr draggable="true"><td>Mariam realises that she will be sleeping in a separate room from her husband</td></tr>
+						<tr draggable="true"><td>Rasheed tells Mariam he cannot stand the sound of woman crying</td></tr>
+						<tr draggable="true"><td>Mariam moves in with Jalil in Herat</td></tr>
+						<tr draggable="true"><td>Mariam goes to the tandoor line and meets several of the other women in the area</td></tr>
+						<tr draggable="true"><td>Jalil tries to get Mariam's attention and chases after her bus</td></tr>
+						<tr draggable="true"><td>Mariam unpacks her things and begins cleaning the house.</td></tr>
+					</tbody>
+				</table>
+			</div>
+<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Group discussion in same groups</h3>
+				<p>In your groups discuss the following quote and discuss who said it, what you think it says about the person's character and its overall relevance to the given themes in the introduction.</p>
+				<blockquote>
+					<p>“That’s one thing I can't stand,” he said, scowling, “the sound of a woman crying. I’m sorry. I have no patience for it.”</p>
+				</blockquote>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Group discussion</h3>
+				<h4>Chapter 14</h4>
+				<ol>
+					<li>How does Rasheed’s behavior change after the miscarriage?</li>
+					<li>What role does self-blame play in Mariam’s grief?</li>
+					<li>How does Rasheed’s refusal to hold a burial for the baby highlight differences between him and Mariam?</li>
+				</ol>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Group discussion</h3>
+				<h4>Chapter 15</h4>
+				<ol>
+					<li>What event triggers the large demonstrations in Kabul, and how does the neighborhood react?</li>
+					<li>How has Mariam’s relationship with Rasheed deteriorated over the years, and what are some of the signs of this decline?</li>
+					<li>What significant political change takes place, and how does Rasheed initially react to it?</li>
+				</ol>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Break time</h3>
+				<p><img src="https://imgs.search.brave.com/0ya5CoqhshMG1fiWuv8RI5vBNk9rRrxx-Eh8VwWpNGE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YTEuZ2lwaHkuY29t/L21lZGlhL3YxLlky/bGtQVGM1TUdJM05q/RXhaek0zTmpKdWEy/aG1lakIyWmpKd05I/VXhPWEpvYWpnek5t/dGhlbWhwTWpGbU56/WmxhM0ZrWWlabGNE/MTJNVjluYVdaelgz/TmxZWEpqYUNaamRE/MW4vRll3eldKQmR0/cUtsZW05T1p5L2dp/cGh5LmdpZg.gif" alt="Funny gif during break time" style="max-width: 100%; border-radius: .5rem; display: block; margin: 1rem auto;"></p>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Read article about the Bloody Code</h3>
+				<p><a href="https://www.bbc.co.uk/bitesize/guides/z938v9q/revision/4" target="_blank" rel="noopener noreferrer">BBC Bitesize: Bloody Code</a></p>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Group discussion</h3>
+				<p>In your groups discuss what you believe you would do if your country was at war, your neighborhood was being destroyed, and your family was at risk of being killed.</p>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Exit ticket</h3>
+				<p>Write down a short paragraph about what you would do, where you would go or how you as a teenager would feel. Hand in your work to the teacher before leaving the class.</p>
+			</div>
+            <div class="carousel-controls" aria-label="Carousel controls">
+				<button type="button" class="previous-slide" disabled>← Previous</button>
+				<button type="button" class="next-slide">Next →</button>
+			</div>
+			<p class="slide-status" aria-live="polite">Slide 1 of 11</p>
+
+		</section>
+	</main>
+
+	<footer id="contact">A starting point for informed, compassionate classroom discussion of <em>A Thousand Splendid Suns</em>.
+		<p><small>Tool by Jovan Botes and Jonathan Haasbroek</small></p>
+	</footer>
+
+	<script>
+		const menuButton = document.querySelector('.menu-toggle');
+		const menu = document.querySelector('#main-navigation');
+		menuButton.addEventListener('click', () => {
+			const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+			menuButton.setAttribute('aria-expanded', String(!expanded));
+			menuButton.setAttribute('aria-label', expanded ? 'Open navigation menu' : 'Close navigation menu');
+			menu.classList.toggle('open', !expanded);
+		});
+
+		const slides = [...document.querySelectorAll('.carousel-slide')];
+		const sortableRows = [...document.querySelectorAll('.carousel-table tbody tr')];
+		let draggedRow = null;
+		sortableRows.forEach(row => {
+			row.addEventListener('dragstart', event => {
+				draggedRow = row;
+				row.classList.add('dragging');
+				event.dataTransfer.effectAllowed = 'move';
+				event.dataTransfer.setData('text/plain', 'reorder');
+			});
+			row.addEventListener('dragover', event => {
+				if (!draggedRow || draggedRow === row) return;
+				event.preventDefault();
+				row.classList.add('drop-target');
+			});
+			row.addEventListener('dragleave', () => row.classList.remove('drop-target'));
+			row.addEventListener('drop', event => {
+				if (!draggedRow || draggedRow === row) return;
+				event.preventDefault();
+				const bounds = row.getBoundingClientRect();
+				row.parentNode.insertBefore(draggedRow, event.clientY < bounds.top + bounds.height / 2 ? row : row.nextSibling);
+			});
+			row.addEventListener('dragend', () => {
+				sortableRows.forEach(item => item.classList.remove('dragging', 'drop-target'));
+				draggedRow = null;
+			});
+		});
+		const previousButton = document.querySelector('.previous-slide');
+		const nextButton = document.querySelector('.next-slide');
+		const slideStatus = document.querySelector('.slide-status');
+		let currentSlide = 0;
+
+		function showSlide(index) {
+			currentSlide = index;
+			slides.forEach((slide, i) => {
+				slide.hidden = i !== currentSlide;
+				slide.setAttribute('aria-label', `Slide ${i + 1} of ${slides.length}`);
+			});
+			previousButton.disabled = currentSlide === 0;
+			nextButton.disabled = currentSlide === slides.length - 1;
+			nextButton.textContent = currentSlide === slides.length - 1 ? 'End →' : 'Next →';
+			slideStatus.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+		}
+
+		previousButton.addEventListener('click', () => showSlide(currentSlide - 1));
+		nextButton.addEventListener('click', () => {
+			if (currentSlide < slides.length - 1) {
+				showSlide(currentSlide + 1);
+			}
+		});
+
+		showSlide(0);
+	</script>
+</body>
+</html>

@@ -1,1 +1,189 @@
-<h1>Introduction to A Thousand Splendid Suns</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Introduction | A Thousand Splendid Suns</title>
+	<style>
+		:root { color-scheme: light; font-family: Arial, sans-serif; --text: #323232; --gold: #F6D869; --brown: #68291B; --rust: #7A2A18; --olive: #9F9460; --orange: #DE420B; --cream: #fffaf0; }
+		* { box-sizing: border-box; }
+		body { margin: 0; color: var(--text); background: var(--cream); }
+		header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 8%; background: #fff; border-bottom: 3px solid var(--gold); }
+		.logo { font-size: 1.35rem; font-weight: 700; color: var(--brown); }
+		nav { position: relative; }
+		.menu-toggle { box-sizing: border-box; min-width: 3rem; min-height: 3rem; flex: 0 0 auto; padding: .5rem .75rem; border: 1px solid var(--olive); border-radius: .35rem; background: #fff; color: var(--brown); font-size: 1.5rem; cursor: pointer; }
+		nav ul { display: none; position: absolute; z-index: 2; top: 100%; right: 0; width: max-content; min-width: max-content; max-width: min(90vw, 24rem); margin: .5rem 0 0; padding: .5rem 0; list-style: none; background: #fff; border: 1px solid var(--olive); border-radius: .5rem; box-shadow: 0 .5rem 1rem #0002; }
+		nav.open ul { display: block; }
+		nav a { display: block; padding: .65rem 1rem; color: var(--text); text-decoration: none; white-space: nowrap; }
+		nav a:hover, nav a:focus-visible { color: var(--orange); background: var(--cream); }
+		.menu-toggle:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+		nav ul { max-height: min(70vh, 32rem); overflow-y: auto; }
+		main { max-width: 1000px; min-height: 55vh; margin: auto; padding: 4rem 8%; }
+		h1 { color: var(--brown); }
+		.lesson-plan { max-width: 840px; margin: 0 auto 4rem; padding: clamp(1.5rem, 4vw, 3rem); background: #fff; border: 1px solid #e8dec1; border-top: 5px solid var(--gold); border-radius: .75rem; box-shadow: 0 .75rem 2rem #68291b12; }
+		.lesson-plan h2 { margin-top: 0; color: var(--brown); font-size: 1.75rem; }
+		.lesson-plan h3 { margin: 2rem 0 .75rem; color: var(--rust); }
+		.lesson-plan > ul { display: grid; gap: .65rem; margin: 1rem 0 2.5rem; padding: 1.25rem 1.5rem 1.25rem 2.5rem; background: var(--cream); border-left: 4px solid var(--olive); border-radius: .35rem; }
+		.lesson-plan li::marker { color: var(--orange); }
+		.lesson-plan blockquote { margin: 0; padding: 1rem 1.25rem; color: var(--brown); background: #fff8df; border-left: 4px solid var(--gold); border-radius: 0 .4rem .4rem 0; font-size: 1.08rem; line-height: 1.8; }
+		.lesson-plan blockquote p { margin: 0; }
+		.lesson-plan > p { margin: .75rem 0 1.5rem; color: #5c5145; font-style: italic; }
+		.carousel-slide[hidden] { display: none; }
+		.carousel-controls { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; }
+		.carousel-controls button { flex: 1; min-width: 0; padding: .75rem 1rem; border: 1px solid var(--olive); border-radius: .35rem; background: var(--brown); color: #fff; font: inherit; cursor: pointer; }
+		.carousel-controls button:hover:not(:disabled), .carousel-controls button:focus-visible { background: var(--rust); outline: 3px solid var(--gold); outline-offset: 2px; }
+		.carousel-controls button:disabled { opacity: .5; cursor: not-allowed; }
+		.slide-status { margin: 1rem 0 0; color: #5c5145; text-align: center; }
+		footer { padding: 2rem 8%; color: var(--text); text-align: center; border-top: 3px solid var(--olive); background: #fff; }
+		.carousel-slide img { display: block; width: 100%; max-width: 100%; height: auto; margin: 1rem auto; border-radius: .5rem; }
+		img { max-width: 100%; height: auto; }
+		body { overflow-x: hidden; }
+		main, header, footer { max-width: 100%; }
+		.lesson-plan { width: min(100%, 840px); }
+		@media (max-width: 900px) {
+			header { padding: 1rem 5%; }
+			main { padding: 3rem 5%; }
+			.lesson-plan { margin: 0 auto 3rem; width: min(100%, 760px); }
+		}
+		@media (max-width: 700px) {
+			header { flex-wrap: nowrap; gap: .75rem; }
+			.logo { font-size: 1.1rem; }
+			nav { width: auto; margin-left: auto; flex: 0 0 auto; }
+			.menu-toggle { display: flex; align-items: center; justify-content: center; text-align: center; }
+			nav ul { left: auto; right: 0; width: max-content; min-width: max-content; }
+			.lesson-plan { width: calc(100% - 1.5rem); padding: 1.25rem; }
+			.lesson-plan > ul { padding: 1rem 1rem 1rem 1.75rem; }
+			.carousel-controls { flex-direction: row; }
+			.carousel-controls button { width: 50%; padding: .75rem .5rem; }
+			h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+			.lesson-plan h2 { font-size: 1.45rem; }
+			.lesson-plan h3 { font-size: 1.2rem; }
+		}
+		@media (max-width: 480px) {
+			body { font-size: 15px; }
+			header, main, footer { padding-left: 1rem; padding-right: 1rem; }
+			header { align-items: stretch; }
+			.logo { line-height: 1.4; }
+			.carousel-controls { gap: .5rem; }
+			.carousel-controls button { font-size: .95rem; }
+			.lesson-plan { width: calc(100% - 1rem); margin: 0 auto 2rem; }
+			.lesson-plan > ul { padding: 0.9rem 0.9rem 0.9rem 1.4rem; }
+			.lesson-plan blockquote { padding: 0.85rem 1rem; }
+			.slide-status { font-size: 0.95rem; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">TSSS | Teacher Tool</div>
+		<nav id="main-navigation" aria-label="Main navigation">
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-links" aria-label="Open navigation menu">☰</button>
+			<ul id="navigation-links">
+				<li><a href="introduction.html">Introduction</a></li>
+				<li><a href="section-1.html">Section 1</a></li>
+				<li><a href="section-2.html">Section 2</a></li>
+				<li><a href="section-3.html">Section 3</a></li>
+				<li><a href="section-4.html">Section 4</a></li>
+				<li><a href="lesson-plans.html">Lesson plans</a></li>
+				<li><a href="references.html">References</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h1>Introduction lesson to <em>A Thousand Splendid Suns</em></h1>
+	
+	<section class="lesson-plan">
+		<div class="carousel-slide" aria-roledescription="slide">
+			<h2>Today's lesson:</h2>
+			<ul>
+				<li>Poetry reading and discussion</li>
+				<li>Break Time</li>
+				<li>Introduction to the book <em>A Thousand Splendid Suns</em></li>
+				<li>Group Discussion</li>
+				<li>Exit Tickets</li>
+			</ul>
+		</div>
+		
+		<div class="carousel-slide" aria-roledescription="slide" hidden>
+			<h3>Read the following poem:</h3>
+			<blockquote><p>Make a mark on my vehicle for me<br>last night, I waved to a wrong one</p></blockquote>
+			<p>Reread the poem and discuss it in your group.</p>
+		</div>
+		<div class="carousel-slide" aria-roledescription="slide" hidden>
+			<h3>Read the next poem:</h3>
+			<blockquote><p>If there is no bad intention in your mind, oh<br>rahman<br>There is no sin in looking at a beautiful face</p></blockquote>
+			<p>Reread the poem and discuss it in your group.</p>
+		</div>
+		<div class="carousel-slide" aria-roledescription="slide" hidden>
+			<h3>Read the last poem:</h3>
+			<blockquote><p>May god destroy your father, you old man,<br>who threw me into your bed and called it destiny</p></blockquote>
+			<p>Reread the poem and discuss it in your group.</p>
+		</div>
+        <div class="carousel-slide" aria-roledescription="slide" hidden>
+			<h3>Break Time</h3>
+			<p>Take a short break and stretch. Relax before we continue.</p>
+			<img src="https://imgs.search.brave.com/Z2JX8BB8Wg4nBKmEn1bV1Yuy6moUZ6td8zi6yliDnSk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50ZW5vci5jb20v/aWMwQmpPdzlqWUlB/QUFBTS9jYXQtdG9u/Z3VlLmdpZg.gif" alt="Fun animated break-time GIF" style="display:block; max-width:100%; margin:1rem auto; border-radius:.5rem;">
+		</div>
+		<div class="carousel-slide" aria-roledescription="slide" hidden>
+			<h3>Introduction to <em>A Thousand Splendid Suns</em></h3>
+			<p>In a post-World War II era, Afghanistan's political sphere was dominated by the Soviet Union until 1989, bringing an end to what was known as the decade-long war. Although many thought this to be an era of hope and growth, rebellions started against the communist-backed government in the country by united factions known as the Mujahideen (those who engage in Islam), who overthrew the government and changed the name of Afghanistan to the Islamic State of Afghanistan.</p>
+			<p>However, the factions within the Mujahideen would soon go to war with one another, with warlords claiming territory and fighting with each other for control over major points of the country and the cities, especially the city of Kabul. This left untold amounts of damage to not only cities, but also to broken families and societies as a whole.</p>
+			<p>Later, a more united force known as the Taliban emerged and brought an end to the fighting overall, instituting an extremist form of Islamic rule over the country, implementing and enforcing Islamic law and changing the name of the Islamic State of Afghanistan to the Islamic Emirate of Afghanistan.</p>
+			<p>The book <em>A Thousand Splendid Suns</em> takes place in Afghanistan during this period of time and revolves around two main characters: Mariam, a Farsi girl from Herat, and Laila, a Tajik girl from Kabul.</p>
+			<p>The book touches on several topics and interconnected themes, such as abuse, the patriarchy, war, famine, death and gender roles, but also touches on topics such as endurance, relationships and hope.</p>
+		</div>
+		<div class="carousel-slide" aria-roledescription="slide" hidden>
+			<h3>Group discussion</h3>
+			<ul>
+				<li>What is the role of a man and a woman in society?</li>
+				<li>Do you believe men and women should be seen as different?</li>
+				<li>Should they perform different duties, or are they better at different things compared to the opposite sex?</li>
+			</ul>
+		</div>
+		<div class="carousel-slide" aria-roledescription="slide" hidden>
+			<h3>Exit tickets</h3>
+			<p>After reading the introduction to <em>A Thousand Splendid Suns</em>, how do you think the poems will connect to the story?</p>
+			<p>Get some paper from the teacher's desk, write down your thoughts and hand it in.</p>
+		</div>
+		<div class="carousel-controls" aria-label="Carousel controls">
+			<button type="button" class="previous-slide" disabled>← Previous</button>
+			<button type="button" class="next-slide">Next →</button>
+		</div>
+		<p class="slide-status" aria-live="polite">Slide 1 of 8</p>
+	</section>
+    </main>
+	<footer id="contact">A starting point for informed, compassionate classroom discussion of <em>A Thousand Splendid Suns</em>.
+		<p><small>Tool by Jovan Botes and Jonathan Haasbroek</small></p>
+	</footer>
+	<script>
+		const menuButton = document.querySelector('.menu-toggle');
+		const menu = document.querySelector('#main-navigation');
+		menuButton.addEventListener('click', () => {
+			const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+			menuButton.setAttribute('aria-expanded', String(!expanded));
+			menuButton.setAttribute('aria-label', expanded ? 'Open navigation menu' : 'Close navigation menu');
+			menu.classList.toggle('open', !expanded);
+		});
+			const slides = [...document.querySelectorAll('.carousel-slide')];
+			const previousButton = document.querySelector('.previous-slide');
+			const nextButton = document.querySelector('.next-slide');
+			const slideStatus = document.querySelector('.slide-status');
+			let currentSlide = 0;
+			function showSlide(index) {
+				currentSlide = index;
+				slides.forEach((slide, i) => {
+					slide.hidden = i !== currentSlide;
+					slide.setAttribute('aria-label', `Slide ${i + 1} of ${slides.length}`);
+				});
+				previousButton.disabled = currentSlide === 0;
+				nextButton.disabled = currentSlide === slides.length - 1;
+				slideStatus.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+			}
+			previousButton.addEventListener('click', () => showSlide(currentSlide - 1));
+			nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+	</script>
+</body>
+</html>
