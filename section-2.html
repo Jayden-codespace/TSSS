@@ -1,1 +1,304 @@
-<h1>Section 2: for A Thousand Splendid Suns</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Section 2 | A Thousand Splendid Suns</title>
+	<style>
+		:root { color-scheme: light; font-family: Arial, sans-serif; --text: #323232; --gold: #F6D869; --brown: #68291B; --rust: #7A2A18; --olive: #9F9460; --orange: #DE420B; --cream: #fffaf0; }
+		* { box-sizing: border-box; }
+		body { margin: 0; color: var(--text); background: var(--cream); }
+		header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 8%; background: #fff; border-bottom: 3px solid var(--gold); }
+		.logo { font-size: 1.35rem; font-weight: 700; color: var(--brown); }
+		nav { position: relative; }
+		.menu-toggle { box-sizing: border-box; min-width: 3rem; min-height: 3rem; flex: 0 0 auto; padding: .5rem .75rem; border: 1px solid var(--olive); border-radius: .35rem; background: #fff; color: var(--brown); font-size: 1.5rem; cursor: pointer; }
+		nav ul { display: none; position: absolute; z-index: 2; top: 100%; right: 0; width: max-content; min-width: max-content; max-width: min(90vw, 24rem); margin: .5rem 0 0; padding: .5rem 0; list-style: none; background: #fff; border: 1px solid var(--olive); border-radius: .5rem; box-shadow: 0 .5rem 1rem #0002; }
+		nav.open ul { display: block; }
+		nav a { display: block; padding: .65rem 1rem; color: var(--text); text-decoration: none; white-space: nowrap; }
+		nav a:hover, nav a:focus-visible { color: var(--orange); background: var(--cream); }
+		.menu-toggle:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+		nav ul { max-height: min(70vh, 32rem); overflow-y: auto; }
+		main { max-width: 1000px; min-height: 55vh; margin: auto; padding: 4rem 8%; }
+		h1 { color: var(--brown); }
+		.lesson-plan { max-width: 840px; margin: 0 auto 4rem; padding: clamp(1.5rem, 4vw, 3rem); background: #fff; border: 1px solid #e8dec1; border-top: 5px solid var(--gold); border-radius: .75rem; box-shadow: 0 .75rem 2rem #68291b12; }
+		.lesson-plan h2 { margin-top: 0; color: var(--brown); font-size: 1.75rem; }
+		.lesson-plan h3 { margin: 2rem 0 .75rem; color: var(--rust); }
+		.lesson-plan > ul { display: grid; gap: .65rem; margin: 1rem 0 2.5rem; padding: 1.25rem 1.5rem 1.25rem 2.5rem; background: var(--cream); border-left: 4px solid var(--olive); border-radius: .35rem; }
+		.lesson-plan li::marker { color: var(--orange); }
+		.lesson-plan blockquote { margin: 0; padding: 1rem 1.25rem; color: var(--brown); background: #fff8df; border-left: 4px solid var(--gold); border-radius: 0 .4rem .4rem 0; font-size: 1.08rem; line-height: 1.8; }
+		.lesson-plan blockquote p { margin: 0; }
+		.lesson-plan > p { margin: .75rem 0 1.5rem; color: #5c5145; font-style: italic; }
+		.carousel-slide[hidden] { display: none; }
+		.carousel-controls { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; }
+		.carousel-controls button { flex: 1; min-width: 0; padding: .75rem 1rem; border: 1px solid var(--olive); border-radius: .35rem; background: var(--brown); color: #fff; font: inherit; cursor: pointer; }
+		.carousel-controls button:hover:not(:disabled), .carousel-controls button:focus-visible { background: var(--rust); outline: 3px solid var(--gold); outline-offset: 2px; }
+		.carousel-controls button:disabled { opacity: .5; cursor: not-allowed; }
+		.slide-status { margin: 1rem 0 0; color: #5c5145; text-align: center; }
+		footer { padding: 2rem 8%; color: var(--text); text-align: center; border-top: 3px solid var(--olive); background: #fff; }
+		.carousel-slide img { display: block; width: 100%; max-width: 100%; height: auto; margin: 1rem auto; border-radius: .5rem; }
+		img { max-width: 100%; height: auto; }
+		body { overflow-x: hidden; }
+		main, header, footer { max-width: 100%; }
+		.lesson-plan { width: min(100%, 840px); }
+		@media (max-width: 900px) {
+			header { padding: 1rem 5%; }
+			main { padding: 3rem 5%; }
+			.lesson-plan { margin: 0 auto 3rem; width: min(100%, 760px); }
+		}
+		@media (max-width: 700px) {
+			header { flex-wrap: nowrap; gap: .75rem; }
+			.logo { font-size: 1.1rem; }
+			nav { width: auto; margin-left: auto; flex: 0 0 auto; }
+			.menu-toggle { display: flex; align-items: center; justify-content: center; text-align: center; }
+			nav ul { left: auto; right: 0; width: max-content; min-width: max-content; }
+			.lesson-plan { width: calc(100% - 1.5rem); padding: 1.25rem; }
+			.lesson-plan > ul { padding: 1rem 1rem 1rem 1.75rem; }
+			.carousel-controls { flex-direction: row; }
+			.carousel-controls button { width: 50%; padding: .75rem .5rem; }
+			h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+			.lesson-plan h2 { font-size: 1.45rem; }
+			.lesson-plan h3 { font-size: 1.2rem; }
+		}
+		@media (max-width: 480px) {
+			body { font-size: 15px; }
+			header, main, footer { padding-left: 1rem; padding-right: 1rem; }
+			header { align-items: stretch; }
+			.logo { line-height: 1.4; }
+			.carousel-controls { gap: .5rem; }
+			.carousel-controls button { font-size: .95rem; }
+			.lesson-plan { width: calc(100% - 1rem); margin: 0 auto 2rem; }
+			.lesson-plan > ul { padding: 0.9rem 0.9rem 0.9rem 1.4rem; }
+			.lesson-plan blockquote { padding: 0.85rem 1rem; }
+			.slide-status { font-size: 0.95rem; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">TSSS | Teacher Tool</div>
+		<nav id="main-navigation" aria-label="Main navigation">
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-links" aria-label="Open navigation menu">☰</button>
+			<ul id="navigation-links">
+				<li><a href="introduction.html">Introduction</a></li>
+				<li><a href="section-1.html">Section 1</a></li>
+				<li><a href="section-2.html">Section 2</a></li>
+				<li><a href="section-3.html">Section 3</a></li>
+				<li><a href="section-4.html">Section 4</a></li>
+				<li><a href="lesson-plans.html">Lesson plans</a></li>
+				<li><a href="references.html">References</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h1>Section 2: <em>A Thousand Splendid Suns</em></h1>
+
+		<section class="lesson-plan">
+			<div class="carousel-slide" aria-roledescription="slide">
+				<h2>Today's lesson</h2>
+				<ul>
+					<li>Group analysis and review</li>
+					<li>Activity one-pager</li>
+					<li>Class discussion</li>
+					<li>Exit tickets</li>
+				</ul>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Group analysis and review activity</h3>
+				<p>In groups of 4, you will be expected to:</p>
+				<ul>
+					<li>Create a timeline of 6 important events and explain how those influenced Laila.</li>
+					<li>Analyze 3 characters in Section 2, their relationship to Laila and how they influence and affect her.</li>
+					<li>Analyze Laila’s developing identity and how she grows as a person in Section 2.</li>
+					<li>Analyze the developing Afghan political situation and how it shapes Laila’s story, as well as how it affects the characters in Section 2.</li>
+					<li>Assign each student in your group to one of these tasks.</li>
+				</ul>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Student 1</h3>
+				<p><strong>Main task:</strong> Create a timeline of 6 important events in Part Two and explain how each event influenced Laila.</p>
+				<p><strong>Guiding questions:</strong></p>
+				<p><strong>Identifying events</strong></p>
+				<ul>
+					<li>What are six important events that happen to Laila throughout Part Two?</li>
+					<li>Which events change Laila's life or the lives of those around her?</li>
+					<li>Which events have an immediate impact on Laila?</li>
+					<li>Which events have consequences that continue throughout the story?</li>
+				</ul>
+				<p><strong>Understanding their impact</strong></p>
+				<ul>
+					<li>How does Laila feel before and after each event?</li>
+					<li>Does the event change her relationship with another character?</li>
+					<li>Does the event change how she sees herself, her family, or Afghanistan?</li>
+					<li>Does the event give Laila new responsibilities, fears, or hopes?</li>
+				</ul>
+				<p><strong>Analysing</strong></p>
+				<ul>
+					<li>Which of your six events has the greatest impact on Laila? Why?</li>
+					<li>How does Laila change between the beginning and the end of Part Two?</li>
+				</ul>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Student 2</h3>
+				<p><strong>Main task:</strong> Analyse three characters in Part Two, their relationship with Laila, and how they influence and affect her. Students can choose three characters or be assigned them.</p>
+				<p><strong>Suggested characters:</strong> Tariq, Mammy, Babi, Khadim, Ahmad, Noor or Mariam.</p>
+				<p><strong>Guiding questions:</strong></p>
+				<p><strong>Understanding the character</strong></p>
+				<ul>
+					<li>Who is this character, and what is their relationship with Laila?</li>
+					<li>What are their most important characteristics?</li>
+					<li>What are their motivations, beliefs, or priorities?</li>
+					<li>What important events involving this character occur in Part Two?</li>
+				</ul>
+				<p><strong>Understanding their influence</strong></p>
+				<ul>
+					<li>How does this character treat Laila?</li>
+					<li>How does Laila respond to this character?</li>
+					<li>Does this character make Laila feel safe, loved, afraid, responsible, or restricted?</li>
+					<li>What does Laila learn from this character?</li>
+					<li>Does this character influence Laila's decisions or understanding of the world?</li>
+				</ul>
+				<p><strong>Analysing</strong></p>
+				<ul>
+					<li>How would Laila's life be different without this character?</li>
+					<li>Does this character have a positive, negative, or mixed influence on Laila?</li>
+					<li>What does the relationship reveal about Laila's personality or values?</li>
+					<li>How does this relationship contribute to Laila's development?</li>
+				</ul>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Student 3</h3>
+				<p><strong>Main task:</strong> Analyse how Laila's identity develops and how she grows as a person throughout Part Two.</p>
+				<p><strong>Guiding questions:</strong></p>
+				<p><strong>Understanding Laila at the beginning</strong></p>
+				<ul>
+					<li>How would you describe Laila at the beginning of Part Two?</li>
+					<li>What is important to her?</li>
+					<li>How does she view her family, education, and future?</li>
+					<li>What role does Tariq play in her life?</li>
+					<li>How does she see herself as a young Afghan girl?</li>
+				</ul>
+				<p><strong>Identifying changes</strong></p>
+				<ul>
+					<li>What challenges does Laila experience throughout these chapters?</li>
+					<li>How does the death of her brothers affect her understanding of family and loss?</li>
+					<li>How does caring for Mammy change Laila's responsibilities?</li>
+					<li>How does her relationship with Tariq influence her understanding of love and loyalty?</li>
+					<li>How does Babi influence her ambitions and beliefs about education?</li>
+					<li>How does growing up during political conflict affect her?</li>
+				</ul>
+				<p><strong>Analysing her development</strong></p>
+				<ul>
+					<li>What qualities does Laila demonstrate by the end of Part Two that are less apparent at the beginning?</li>
+					<li>Does Laila become more independent, responsible, mature, or aware of the world around her?</li>
+					<li>Which experiences contribute most to her development?</li>
+					<li>How does Laila's identity differ from Mariam's?</li>
+					<li>What hopes does Laila have for her future, and what might threaten them?</li>
+				</ul>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Student 4</h3>
+				<p><strong>Main task:</strong> Analyse how the political situation in Afghanistan develops throughout Part Two, how it shapes Laila's story, and how it affects the characters.</p>
+				<p><strong>Guiding questions:</strong></p>
+				<p><strong>Historical understanding</strong></p>
+				<ul>
+					<li>What happened during the April Revolution of 1978?</li>
+					<li>What kind of government came to power in Afghanistan?</li>
+					<li>What changes did the communist government introduce, particularly regarding education and women's rights?</li>
+					<li>Why did some Afghans oppose the government?</li>
+					<li>Why did the Soviet Union send troops into Afghanistan in 1979?</li>
+					<li>Who were the mujahideen?</li>
+					<li>What was the Soviet Union trying to achieve by supporting the Afghan government?</li>
+					<li>What happened during the Soviet-Afghan War?</li>
+				</ul>
+				<p><strong>Connecting history to the novel</strong></p>
+				<ul>
+					<li>How does the communist government's ideology influence Laila's education?</li>
+					<li>Why are Ahmad and Noor involved in the resistance?</li>
+					<li>How does the conflict affect Mammy's behaviour and mental state?</li>
+					<li>How does the death of Laila's brothers demonstrate the personal consequences of war?</li>
+					<li>Why does Babi want to leave Afghanistan?</li>
+					<li>Why does Mammy refuse to leave?</li>
+					<li>What does the Soviet withdrawal agreement mean for the characters?</li>
+				</ul>
+				<p><strong>Analysing</strong></p>
+				<ul>
+					<li>How does the political situation influence Laila's childhood and opportunities?</li>
+					<li>How does the war affect different characters in different ways?</li>
+					<li>How does Hosseini connect political events with personal experiences?</li>
+					<li>How does the conflict create a contrast between hope for the future and fear of what is to come?</li>
+				</ul>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Final part of the activity</h3>
+				<ul>
+					<li>Discuss your findings with your group.</li>
+					<li>Put all your parts together in a one-pager poster.</li>
+				</ul>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Class discussion</h3>
+				<p>Class discussion on your one-pager and findings.</p>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Exit tickets</h3>
+				<p>Based on what you have learned about Laila, her relationships, and the political situation in Afghanistan, what do you predict will happen in the next section of the novel?</p>
+			</div>
+
+			<div class="carousel-controls" aria-label="Carousel controls">
+				<button type="button" class="previous-slide" disabled>← Previous</button>
+				<button type="button" class="next-slide">Next →</button>
+			</div>
+			<p class="slide-status" aria-live="polite">Slide 1 of 9</p>
+		</section>
+	</main>
+
+	<footer id="contact">A starting point for informed, compassionate classroom discussion of <em>A Thousand Splendid Suns</em>.
+		<p><small>Tool by Jovan Botes and Jonathan Haasbroek</small></p>
+	</footer>
+
+	<script>
+		const menuButton = document.querySelector('.menu-toggle');
+		const menu = document.querySelector('#main-navigation');
+		menuButton.addEventListener('click', () => {
+			const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+			menuButton.setAttribute('aria-expanded', String(!expanded));
+			menuButton.setAttribute('aria-label', expanded ? 'Open navigation menu' : 'Close navigation menu');
+			menu.classList.toggle('open', !expanded);
+		});
+
+		const slides = [...document.querySelectorAll('.carousel-slide')];
+		const previousButton = document.querySelector('.previous-slide');
+		const nextButton = document.querySelector('.next-slide');
+		const slideStatus = document.querySelector('.slide-status');
+		let currentSlide = 0;
+
+		function showSlide(index) {
+			currentSlide = index;
+			slides.forEach((slide, i) => {
+				slide.hidden = i !== currentSlide;
+				slide.setAttribute('aria-label', `Slide ${i + 1} of ${slides.length}`);
+			});
+			previousButton.disabled = currentSlide === 0;
+			nextButton.disabled = currentSlide === slides.length - 1;
+			slideStatus.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+		}
+
+		previousButton.addEventListener('click', () => showSlide(currentSlide - 1));
+		nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+
+		showSlide(0);
+	</script>
+</body>
+</html>

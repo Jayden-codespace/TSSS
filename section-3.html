@@ -1,1 +1,122 @@
-<h1>Section 3: for A Thousand Splendid Suns</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Section 3 | A Thousand Splendid Suns</title>
+	<style>
+		:root { color-scheme: light; font-family: Arial, sans-serif; --text: #323232; --gold: #F6D869; --brown: #68291B; --rust: #7A2A18; --olive: #9F9460; --orange: #DE420B; --cream: #fffaf0; }
+		* { box-sizing: border-box; }
+		body { margin: 0; color: var(--text); background: var(--cream); }
+		header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 8%; background: #fff; border-bottom: 3px solid var(--gold); }
+		.logo { font-size: 1.35rem; font-weight: 700; color: var(--brown); }
+		nav { position: relative; }
+		.menu-toggle { box-sizing: border-box; min-width: 3rem; min-height: 3rem; flex: 0 0 auto; padding: .5rem .75rem; border: 1px solid var(--olive); border-radius: .35rem; background: #fff; color: var(--brown); font-size: 1.5rem; cursor: pointer; }
+		nav ul { display: none; position: absolute; z-index: 2; top: 100%; right: 0; width: max-content; min-width: max-content; max-width: min(90vw, 24rem); max-height: min(70vh, 32rem); overflow-y: auto; margin: .5rem 0 0; padding: .5rem 0; list-style: none; background: #fff; border: 1px solid var(--olive); border-radius: .5rem; box-shadow: 0 .5rem 1rem #0002; }
+		nav.open ul { display: block; }
+		nav a { display: block; padding: .65rem 1rem; color: var(--text); text-decoration: none; white-space: nowrap; }
+		nav a:hover, nav a:focus-visible { color: var(--orange); background: var(--cream); }
+		.menu-toggle:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+		main { max-width: 1000px; min-height: 55vh; margin: auto; padding: 4rem 8%; }
+		h1 { color: var(--brown); }
+		.lesson-plan { width: min(100%, 840px); max-width: 840px; margin: 0 auto 4rem; padding: clamp(1.5rem, 4vw, 3rem); background: #fff; border: 1px solid #e8dec1; border-top: 5px solid var(--gold); border-radius: .75rem; box-shadow: 0 .75rem 2rem #68291b12; }
+		.lesson-plan h2 { margin-top: 0; color: var(--brown); font-size: 1.75rem; }
+		.lesson-plan h3 { margin: 2rem 0 .75rem; color: var(--rust); }
+		.lesson-plan ul, .lesson-plan ol { display: grid; gap: .65rem; margin: 1rem 0 1.5rem; padding-left: 2rem; }
+		.lesson-plan li::marker { color: var(--orange); }
+		.lesson-plan p { line-height: 1.6; }
+		.carousel-slide[hidden] { display: none; }
+		.carousel-controls { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; }
+		.carousel-controls button { flex: 1; min-width: 0; padding: .75rem 1rem; border: 1px solid var(--olive); border-radius: .35rem; background: var(--brown); color: #fff; font: inherit; cursor: pointer; }
+		.carousel-controls button:hover:not(:disabled), .carousel-controls button:focus-visible { background: var(--rust); outline: 3px solid var(--gold); outline-offset: 2px; }
+		.carousel-controls button:disabled { opacity: .5; cursor: not-allowed; }
+		.slide-status { margin: 1rem 0 0; color: #5c5145; text-align: center; }
+		footer { padding: 2rem 8%; color: var(--text); text-align: center; border-top: 3px solid var(--olive); background: #fff; }
+		@media (max-width: 900px) { header { padding: 1rem 5%; } main { padding: 3rem 5%; } }
+		@media (max-width: 700px) { header { flex-wrap: nowrap; gap: .75rem; } .logo { font-size: 1.1rem; } nav { margin-left: auto; flex: 0 0 auto; } .menu-toggle { display: flex; align-items: center; justify-content: center; } .lesson-plan { width: calc(100% - 1.5rem); padding: 1.25rem; } h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); } .lesson-plan h2 { font-size: 1.45rem; } }
+		@media (max-width: 480px) { body { font-size: 15px; } header, main, footer { padding-left: 1rem; padding-right: 1rem; } header { align-items: stretch; } .lesson-plan { width: calc(100% - 1rem); margin-bottom: 2rem; } .carousel-controls { gap: .5rem; } .carousel-controls button { padding: .75rem .5rem; font-size: .95rem; } }
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">TSSS | Teacher Tool</div>
+		<nav id="main-navigation" aria-label="Main navigation">
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-links" aria-label="Open navigation menu">☰</button>
+			<ul id="navigation-links">
+				<li><a href="introduction.html">Introduction</a></li><li><a href="section-1.html">Section 1</a></li><li><a href="section-2.html">Section 2</a></li><li><a href="section-3.html">Section 3</a></li><li><a href="section-4.html">Section 4</a></li><li><a href="lesson-plans.html">Lesson plans</a></li><li><a href="references.html">References</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h1>Section 3: <em>A Thousand Splendid Suns</em></h1>
+		<section class="lesson-plan" aria-label="Section 3 lesson carousel">
+			<div class="carousel-slide" aria-roledescription="slide">
+				<h2>Today's lesson</h2>
+				<ul><li>Identify key events and turning points in Section 3.</li><li>Analyze how Mariam and Laila's relationship develops.</li><li>Explain how Hosseini presents power, oppression, resistance, friendship, and sacrifice.</li><li>Use textual evidence to support interpretations of characters and themes.</li><li>Communicate understanding of Mariam's character development.</li></ul>
+			</div>
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Building contexts: Part A — What is choice?</h3><p>For each situation, decide whether the person has a free choice, a limited choice, or almost no choice.</p>
+				<ol><li>A student chooses which book to read for homework.</li><li>Someone chooses between two options, but both have serious consequences.</li><li>Someone is forced to do something because they are threatened.</li><li>Someone makes a decision because they believe it is the only way to protect their family.</li></ol>
+				<h3>Discuss with a partner</h3><ul><li>What makes a decision a real choice?</li><li>Can someone make a decision without complete freedom?</li><li>Can a person have power with very little control over their situation?</li></ul>
+			</div>
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Part B — Key concepts</h3><p>Match each word to the correct definition.</p>
+				<ol><li>Power</li><li>Control</li><li>Resistance</li><li>Oppression</li><li>Agency</li><li>Solidarity</li></ol>
+				<ul><li><strong>A.</strong> The ability to make decisions or take action for yourself.</li><li><strong>B.</strong> The act of opposing or fighting against something.</li><li><strong>C.</strong> The ability to influence people or situations.</li><li><strong>D.</strong> Unfair treatment or control of a group of people.</li><li><strong>E.</strong> The ability to direct or influence someone's actions.</li><li><strong>F.</strong> Support between people who share a difficulty or goal.</li></ul>
+			</div>
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Part C — Apply the concepts</h3><p>Think about what you already know about <em>A Thousand Splendid Suns</em>. Complete each statement.</p>
+				<ul><li>One way Rasheed has power is…</li><li>One way Mariam has limited power is…</li><li>One way Laila shows resistance is…</li><li>One way Mariam and Laila support each other is…</li></ul>
+			</div>
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Guided reading &amp; analysis sheet</h3><p>As you read, look for moments that show how Mariam and Laila's relationship changes. Don't just write what happens: ask what it reveals about the characters.</p>
+				<h3>Mariam &amp; Laila relationship timeline</h3><p>Place the following stages in the correct order.</p>
+				<ol><li>They begin to trust each other.</li><li>Mariam sees Laila as a threat.</li><li>They become allies.</li><li>They begin to understand each other's experiences.</li><li>They support each other against Rasheed.</li><li>They develop a relationship based on friendship and family.</li></ol><p><strong>Now add evidence:</strong> Choose three stages and give evidence from the novel.</p>
+			</div>
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Higher-order question</h3><p>What causes Mariam and Laila to become closer? Consider shared suffering, motherhood, Rasheed, loneliness, trust, and survival.</p><p><strong>Explain your answer:</strong></p>
+				<h3>Power map</h3><p>Draw arrows between the characters: <strong>Rasheed · Mariam · Laila · Aziza · Zalmai</strong>. For every arrow, explain what kind of power that person has.</p><p><strong>Types of power:</strong> Physical · Financial · Social · Political · Emotional · Information</p>
+			</div>
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Think deeper: power and agency</h3><p>Does Mariam have power? Choose Yes, No, or Sometimes, and give evidence.</p><p>Does Laila have power? Choose Yes, No, or Sometimes, and give evidence.</p><p><strong>Challenge:</strong> What is the difference between power and agency?</p>
+			</div>
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Mariam's character journey: Chapter 27 → Chapter 47</h3><p><strong>Beginning of Part Three</strong></p><ul><li>Mariam is…</li><li>Her relationship with Laila is…</li><li>She has power over…</li><li>She has little or no control over…</li></ul><p><strong>Middle of Part Three</strong></p><ul><li>Mariam begins to…</li><li>Her relationship with Laila changes because…</li></ul><p><strong>End of Part Three</strong></p><ul><li>Mariam decides to…</li><li>She does this because…</li><li>This shows that Mariam has changed from… to…</li></ul>
+			</div>
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Contemporary media formative assessment: “Mariam in 60 Seconds”</h3><p>Create a 60-second TikTok/Instagram Reel-style literary analysis of Mariam's character development. You do not need to upload your video. Create a video, storyboard, series of slides, or mock social-media post.</p>
+				<ol><li><strong>Hook:</strong> “Mariam starts Part Three as __________, but by Chapter 47…”</li><li><strong>Character development:</strong> Show Mariam at the beginning, in the middle, and at the end.</li><li><strong>Textual evidence:</strong> Include at least two pieces of evidence from the novel. For each, explain what it shows.</li><li><strong>Relationship with Laila:</strong> Explain why their relationship changes.</li><li><strong>Final message:</strong> Finish: “Through Mariam, Hosseini shows that…”</li></ol>
+			</div>
+			<div class="carousel-slide" aria-roledescription="slide" hidden><h3>Exit ticket</h3><p>Before you leave, respond to each prompt:</p><ol><li>One important change in Mariam is…</li><li>Evidence from the novel:</li><li>This evidence shows…</li><li>One question I have before Part Four:</li></ol></div>
+			<div class="carousel-controls" aria-label="Carousel controls"><button type="button" class="previous-slide" disabled>← Previous</button><button type="button" class="next-slide">Next →</button></div>
+			<p class="slide-status" aria-live="polite">Slide 1 of 10</p>
+		</section>
+	</main>
+	<footer id="contact">A starting point for informed, compassionate classroom discussion of <em>A Thousand Splendid Suns</em>.<p><small>Tool by Jovan Botes and Jonathan Haasbroek</small></p></footer>
+	<script>
+		const menuButton = document.querySelector('.menu-toggle');
+		const menu = document.querySelector('#main-navigation');
+		menuButton.addEventListener('click', () => {
+			const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+			menuButton.setAttribute('aria-expanded', String(!expanded));
+			menuButton.setAttribute('aria-label', expanded ? 'Open navigation menu' : 'Close navigation menu');
+			menu.classList.toggle('open', !expanded);
+		});
+		const slides = [...document.querySelectorAll('.carousel-slide')];
+		const previousButton = document.querySelector('.previous-slide');
+		const nextButton = document.querySelector('.next-slide');
+		const slideStatus = document.querySelector('.slide-status');
+		let currentSlide = 0;
+		function showSlide(index) {
+			currentSlide = index;
+			slides.forEach((slide, i) => { slide.hidden = i !== currentSlide; slide.setAttribute('aria-label', `Slide ${i + 1} of ${slides.length}`); });
+			previousButton.disabled = currentSlide === 0;
+			nextButton.disabled = currentSlide === slides.length - 1;
+			slideStatus.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+		}
+		previousButton.addEventListener('click', () => showSlide(currentSlide - 1));
+		nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+		showSlide(0);
+	</script>
+</body>
+</html>
