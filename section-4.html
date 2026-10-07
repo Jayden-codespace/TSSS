@@ -1,1 +1,242 @@
-<h1>Section 4: for A Thousand Splendid Suns</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Section 4 | A Thousand Splendid Suns</title>
+	<style>
+		:root { color-scheme: light; font-family: Arial, sans-serif; --text: #323232; --gold: #F6D869; --brown: #68291B; --rust: #7A2A18; --olive: #9F9460; --orange: #DE420B; --cream: #fffaf0; }
+		* { box-sizing: border-box; }
+		body { margin: 0; color: var(--text); background: var(--cream); }
+		header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 8%; background: #fff; border-bottom: 3px solid var(--gold); }
+		.logo { font-size: 1.35rem; font-weight: 700; color: var(--brown); }
+		nav { position: relative; }
+		.menu-toggle { box-sizing: border-box; min-width: 3rem; min-height: 3rem; flex: 0 0 auto; padding: .5rem .75rem; border: 1px solid var(--olive); border-radius: .35rem; background: #fff; color: var(--brown); font-size: 1.5rem; cursor: pointer; }
+		nav ul { display: none; position: absolute; z-index: 2; top: 100%; right: 0; width: max-content; min-width: max-content; max-width: min(90vw, 24rem); max-height: min(70vh, 32rem); overflow-y: auto; margin: .5rem 0 0; padding: .5rem 0; list-style: none; background: #fff; border: 1px solid var(--olive); border-radius: .5rem; box-shadow: 0 .5rem 1rem #0002; }
+		nav.open ul { display: block; }
+		nav a { display: block; padding: .65rem 1rem; color: var(--text); text-decoration: none; white-space: nowrap; }
+		nav a:hover, nav a:focus-visible { color: var(--orange); background: var(--cream); }
+		.menu-toggle:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+		main { max-width: 1000px; min-height: 55vh; margin: auto; padding: 4rem 8%; }
+		h1 { color: var(--brown); }
+		.lesson-plan { width: min(100%, 840px); max-width: 840px; margin: 0 auto 4rem; padding: clamp(1.5rem, 4vw, 3rem); background: #fff; border: 1px solid #e8dec1; border-top: 5px solid var(--gold); border-radius: .75rem; box-shadow: 0 .75rem 2rem #68291b12; }
+		.lesson-plan h2 { margin-top: 0; color: var(--brown); font-size: 1.75rem; }
+		.lesson-plan h3 { margin: 2rem 0 .75rem; color: var(--rust); }
+		.lesson-plan ul, .lesson-plan ol { display: grid; gap: .65rem; margin: 1rem 0 1.5rem; padding-left: 2rem; }
+		.lesson-plan li::marker { color: var(--orange); }
+		.lesson-plan p { line-height: 1.6; }
+		.carousel-slide[hidden] { display: none; }
+		.war-photo-placeholder { display: flex; align-items: center; justify-content: center; min-height: 220px; margin: 1.25rem 0; padding: 1rem; border: 2px dashed var(--olive); border-radius: .75rem; background: linear-gradient(135deg, #fffaf4, #f6f0e1); color: #6b5f48; font-size: .9rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-align: center; }
+		.carousel-controls { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; }
+		.carousel-controls button { flex: 1; min-width: 0; padding: .75rem 1rem; border: 1px solid var(--olive); border-radius: .35rem; background: var(--brown); color: #fff; font: inherit; cursor: pointer; }
+		.carousel-controls button:hover:not(:disabled), .carousel-controls button:focus-visible { background: var(--rust); outline: 3px solid var(--gold); outline-offset: 2px; }
+		.carousel-controls button:disabled { opacity: .5; cursor: not-allowed; }
+		.slide-status { margin: 1rem 0 0; color: #5c5145; text-align: center; }
+		footer { padding: 2rem 8%; color: var(--text); text-align: center; border-top: 3px solid var(--olive); background: #fff; }
+		@media (max-width: 900px) { header { padding: 1rem 5%; } main { padding: 3rem 5%; } }
+		@media (max-width: 700px) { header { flex-wrap: nowrap; gap: .75rem; } .logo { font-size: 1.1rem; } nav { margin-left: auto; flex: 0 0 auto; } .menu-toggle { display: flex; align-items: center; justify-content: center; } .lesson-plan { width: calc(100% - 1.5rem); padding: 1.25rem; } h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); } .lesson-plan h2 { font-size: 1.45rem; } }
+		@media (max-width: 480px) { body { font-size: 15px; } header, main, footer { padding-left: 1rem; padding-right: 1rem; } header { align-items: stretch; } .lesson-plan { width: calc(100% - 1rem); margin-bottom: 2rem; } .carousel-controls { gap: .5rem; } .carousel-controls button { padding: .75rem .5rem; font-size: .95rem; } }
+		@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+	</style>
+</head>
+<body>
+	<header>
+		<a href="index.html"><div class="logo">TSSS | Teacher Tool</div></a>
+		<nav id="main-navigation" aria-label="Main navigation">
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-links" aria-label="Open navigation menu">☰</button>
+			<ul id="navigation-links"><li><a href="introduction.html">Introduction</a></li><li><a href="section-1.html">Section 1</a></li><li><a href="section-2.html">Section 2</a></li><li><a href="section-3.html">Section 3</a></li><li><a href="section-4.html">Section 4</a></li><li><a href="lesson-plans.html">Lesson plans</a></li><li><a href="references.html">References</a></li></ul>
+		</nav>
+	</header>
+	<main>
+		<h1>Section 4: <em>A Thousand Splendid Suns</em></h1>
+
+		<section class="lesson-plan" aria-label="Section 4 lesson carousel">
+			<div class="carousel-slide" aria-roledescription="slide">
+				<h2>Today's lesson</h2>
+				<ul>
+					<li>Kahoot review</li>
+					<li>And then... activity</li>
+					<li>Group discussion</li>
+					<li>Aquinas' just war theory and discussion</li>
+					<li>Break time</li>
+					<li>Essay</li>
+				</ul>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Kahoot review</h3>
+				<p>
+					<a
+						href="https://create.kahoot.it/details/800ea62a-79f3-4e25-8b69-039c466517da"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Open the Kahoot review
+					</a>
+				</p>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>And then... activity</h3>
+				<p>
+					The teacher will start by saying an occurrence that happened in the book. One by one,
+					students will say what happened next, sequentially following what was previously
+					mentioned. Missing one or two occurrences is fine; this activity is simply to remind
+					students of what occurred.
+				</p>
+				<p><strong>The teacher will start with:</strong></p>
+				<blockquote>
+					<p>
+						“After her house and her family had been destroyed, Mariam and Rasheed took Laila in
+						and nursed her back to good health.”
+					</p>
+				</blockquote>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Discussion in groups</h3>
+				<ul>
+					<li>Can war ever be justified?</li>
+					<li>Share your ideas with the class and discuss.</li>
+				</ul>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Aquinas' just war theory</h3>
+				<p>
+					Aquinas was a Catholic philosopher who spent a long time thinking about the ethics of
+					war. He proposed that war could be justified only if the following criteria were met:
+				</p>
+				<p><strong>War may be morally acceptable only if:</strong></p>
+				<ol>
+					<li>There is a just cause.</li>
+					<li>It is the last resort.</li>
+					<li>The harm caused is proportionate.</li>
+					<li>Civilians are protected.</li>
+				</ol>
+				<p>
+					Discuss the scenarios that follow. For each, decide whether or not the war was
+					justified, using the criteria above.
+				</p>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Scenario: World War II</h3>
+				<img src="WW2.jpeg" alt="World War II timeline image" style="width:100%; max-width:100%; height:auto; border-radius:.5rem; margin:1rem 0;">
+				<p>
+					In 1933, Hitler took power in Germany and began dismantling the limits placed on it
+					after World War I, rearming the country, remilitarizing the Rhineland, annexing
+					Austria, and taking the Sudetenland after the Munich Agreement.
+				</p>
+				<p>
+					In March 1939, Germany occupied the rest of Czechoslovakia, and in August it signed
+					the Molotov–Ribbentrop Pact with the USSR, which secretly divided Eastern Europe
+					between them.
+				</p>
+				<p>
+					On 1 September 1939, Germany invaded Poland. Britain and France, Poland's allies who
+					had guaranteed its independence, declared war two days later.
+				</p>
+				<p>
+					<strong>Discuss:</strong> Was the declaration of war justified according to Aquinas'
+					criteria?
+				</p>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Scenario: Ukraine's defensive war</h3>
+				<img src="Ukraine.jpeg" alt="Ukraine defensive war image" style="width:100%; max-width:100%; height:auto; border-radius:.5rem; margin:1rem 0;">
+				<p>
+					In 2014, after the Euromaidan protests and President Yanukovych's flight, Russia
+					annexed Crimea and backed separatists in the Donbas. The Minsk agreements failed to end
+					the fighting.
+				</p>
+				<p>
+					Russia massed troops near Ukraine's borders in 2021–22 and invaded in February 2022.
+					Ukraine's defenders cite self-defence against invasion, and the UN General Assembly has
+					condemned the invasion.
+				</p>
+				<p>
+					Russia cites NATO expansion and the protection of Russian speakers, claims that most
+					Western governments and scholars reject.
+				</p>
+				<p>
+					<strong>Discuss:</strong> Apply Aquinas' criteria to Ukraine's defensive war. What
+					evidence supports your judgement?
+				</p>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Scenario: Iraq's invasion of Iran</h3>
+				<img src="Iran.jpeg" alt="Iraq invasion of Iran image" style="width:100%; max-width:100%; height:auto; border-radius:.5rem; margin:1rem 0;">
+				<p>
+					The 1975 Algiers Accord had settled the Shatt al-Arab boundary dispute, but the 1979
+					Iranian Revolution and Khomeini's calls for Shia uprisings alarmed Saddam Hussein's
+					government.
+				</p>
+				<p>
+					Border clashes and mutual accusations escalated through 1980. Iraq abrogated the accord
+					in September, and its forces invaded. Iraq presented the invasion as a response to
+					Iranian provocation and a recovery of territory, while Iran argued it was unprovoked
+					aggression. The Security Council initially called for a ceasefire without naming an
+					aggressor.
+				</p>
+				<p>
+					<strong>Discuss:</strong> Was Iraq's invasion justified under Aquinas' criteria?
+					Explain your reasoning.
+				</p>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Break time</h3>
+				<p>Take a short break before continuing with the essay.</p>
+			</div>
+
+			<div class="carousel-slide" aria-roledescription="slide" hidden>
+				<h3>Essay</h3>
+				<p>
+					What do you think will happen to Laila, Aziza, and Tariq in the upcoming chapters? What
+					do you hope will happen?
+				</p>
+				<p>
+					<strong>Bonus:</strong> Using what you know of historical events in the world, what
+					important historical events might take place in the book, and how do you think they
+					might impact our characters?
+				</p>
+			</div>
+
+			<div class="carousel-controls" aria-label="Carousel controls">
+				<button type="button" class="previous-slide" disabled>← Previous</button>
+				<button type="button" class="next-slide">Next →</button>
+			</div>
+			<p class="slide-status" aria-live="polite">Slide 1 of 10</p>
+		</section>
+	</main>
+	<footer id="contact">A starting point for informed, compassionate classroom discussion of <em>A Thousand Splendid Suns</em>.<p><small>Tool by Jovan Botes and Jonathan Haasbroek</small></p></footer>
+	<script>
+		const menuButton = document.querySelector('.menu-toggle');
+		const menu = document.querySelector('#main-navigation');
+		menuButton.addEventListener('click', () => {
+			const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+			menuButton.setAttribute('aria-expanded', String(!expanded));
+			menuButton.setAttribute('aria-label', expanded ? 'Open navigation menu' : 'Close navigation menu');
+			menu.classList.toggle('open', !expanded);
+		});
+		const slides = [...document.querySelectorAll('.carousel-slide')];
+		const previousButton = document.querySelector('.previous-slide');
+		const nextButton = document.querySelector('.next-slide');
+		const slideStatus = document.querySelector('.slide-status');
+		let currentSlide = 0;
+		function showSlide(index) {
+			currentSlide = index;
+			slides.forEach((slide, i) => { slide.hidden = i !== currentSlide; slide.setAttribute('aria-label', `Slide ${i + 1} of ${slides.length}`); });
+			previousButton.disabled = currentSlide === 0;
+			nextButton.disabled = currentSlide === slides.length - 1;
+			slideStatus.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
+		}
+		previousButton.addEventListener('click', () => showSlide(currentSlide - 1));
+		nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+		showSlide(0);
+	</script>
+</body>
+</html>
